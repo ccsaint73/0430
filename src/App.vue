@@ -33,4 +33,8 @@ a {
 	color: #000000;
 }
 
+html, body, #app, .root{
+	height: 100%;
+}
+
 </style>

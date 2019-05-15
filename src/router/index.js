@@ -8,7 +8,25 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      component: ()=>import('@/pages/home')
+      component: ()=>import('@/pages/root'),
+      children: [
+      	{
+      		path: '/home',
+      		component: ()=>import('@/pages/home')
+      	},
+      	{
+      		path: '/friend',
+      		component: ()=>import('@/pages/friend')
+      	},
+      	{
+      		path: '/profile',
+      		component: ()=>import('@/pages/profile')
+      	},
+      	{
+      		path: '/',
+      		redirect: '/home'
+      	}
+      ]
     },
     {
     	path: '/detail/:id',
